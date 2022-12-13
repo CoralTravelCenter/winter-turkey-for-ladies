@@ -52,7 +52,26 @@ String::zeroPad = (len, c) ->
     s + @
 Number::zeroPad = (len, c) -> String(@).zeroPad len, c
 
-window.DEBUG = 'APP NAME'
-
 ASAP ->
+    $('[data-content-marker]').on 'click', (e) ->
+        $this = $(this)
+        marker = $this.attr 'data-content-marker'
+        $("[data-content='#{ marker }']").addClass('shown').siblings('.shown').removeClass('shown')
+        $this.addClass('selected').siblings('.selected').removeClass('selected')
+        setTimeout ->
+            $('.flickity-enabled').flickity 'resize'
+        , 100
+        setTimeout ->
+            $('.flickity-enabled').flickity 'resize'
+        , 1000
 
+
+    preload 'https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js', ->
+        $('.mobi-slider').flickity
+            watchCSS: yes
+            cellSelector: '.info-comp'
+            cellAlign: 'center'
+            wrapAround: yes
+        setTimeout ->
+            $('.flickity-enabled').flickity 'resize'
+        , 100

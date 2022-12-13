@@ -155,7 +155,7 @@
   height: 2.6em;
   padding: 0 2em;
   border: 0;
-  text-decoration: none;
+  text-decoration: none!important;
   border-radius: 0.5em;
 }
 #site-wrap section > .contenu .buttonlike:active {
@@ -184,6 +184,7 @@
 #site-wrap section > .contenu .buttonlike.red {
   color: white;
   background-color: #D7232A;
+  border-radius: 100px;
 }
 body .contentLayout-BaseContainer {
   max-width: 100%;

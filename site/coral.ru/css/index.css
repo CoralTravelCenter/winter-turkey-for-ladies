@@ -155,7 +155,7 @@
   height: 2.6em;
   padding: 0 2em;
   border: 0;
-  text-decoration: none;
+  text-decoration: none!important;
   border-radius: 0.5em;
 }
 #site-wrap section > .contenu .buttonlike:active {
@@ -184,6 +184,7 @@
 #site-wrap section > .contenu .buttonlike.red {
   color: white;
   background-color: #D7232A;
+  border-radius: 100px;
 }
 body .contentLayout-BaseContainer {
   max-width: 100%;
@@ -462,4 +463,83 @@ body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2
 }
 #site-wrap section.resorts > .contenu .resort-contents .resort .textual p + p {
   margin-top: 1em;
+}
+#site-wrap section.message-us > .contenu {
+  flex-direction: row;
+  align-items: stretch;
+}
+@media screen and (max-width: 768px) {
+  #site-wrap section.message-us > .contenu {
+    flex-direction: column;
+  }
+}
+#site-wrap section.message-us > .contenu .lefty,
+#site-wrap section.message-us > .contenu .righty {
+  flex: 1 1 50%;
+}
+#site-wrap section.message-us > .contenu .righty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid black;
+}
+#site-wrap section.message-us > .contenu .righty > * {
+  max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+  #site-wrap section.message-us > .contenu .righty {
+    border-left: 0;
+    border-top: 1px solid black;
+    margin-top: 2em;
+    padding-top: 2em;
+  }
+}
+#site-wrap section.message-us > .contenu .messengers {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+#site-wrap section.message-us > .contenu .messengers a {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  width: 5em;
+  max-width: 80px;
+  background: center no-repeat;
+  background-size: contain;
+  margin: 0 1.5em;
+}
+#site-wrap section.message-us > .contenu .messengers a:active {
+  -webkit-transform: translateY(2px);
+  -moz-transform: translateY(2px);
+  -ms-transform: translateY(2px);
+  -o-transform: translateY(2px);
+  transform: translateY(2px);
+}
+#site-wrap section.message-us > .contenu .messengers a:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+#site-wrap section.message-us > .contenu .messengers a > * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#site-wrap section.message-us > .contenu .phone-number {
+  font-size: 3.125em;
+  font-weight: bold;
+  color: #FFAE00;
+  text-decoration: none;
+  margin: 0.5em auto;
+}
+@media screen and (max-width: 768px) {
+  #site-wrap section.message-us > .contenu .phone-number {
+    font-size: 8vw;
+  }
 }
