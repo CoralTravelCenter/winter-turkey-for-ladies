@@ -58,3 +58,8 @@ ASAP ->
         marker = $this.attr 'data-content-marker'
         $("[data-content='#{ marker }']").addClass('shown').siblings('.shown').removeClass('shown')
         $this.addClass('selected').siblings('.selected').removeClass('selected')
+
+        $hotels = $('[data-component-instance]')
+        $('.resort').each (idx, el) ->
+            $resort = $(el)
+            $resort.append($('<div/>').append($hotels.eq(idx).closest('.widgetcontainer').children()))

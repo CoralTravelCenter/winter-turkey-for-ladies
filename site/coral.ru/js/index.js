@@ -120,10 +120,16 @@ Number.prototype.zeroPad = function(len, c) {
 
 ASAP(function() {
   return $('[data-content-marker]').on('click', function(e) {
-    var $this, marker;
+    var $hotels, $this, marker;
     $this = $(this);
     marker = $this.attr('data-content-marker');
     $("[data-content='" + marker + "']").addClass('shown').siblings('.shown').removeClass('shown');
-    return $this.addClass('selected').siblings('.selected').removeClass('selected');
+    $this.addClass('selected').siblings('.selected').removeClass('selected');
+    $hotels = $('[data-component-instance]');
+    return $('.resort').each(function(idx, el) {
+      var $resort;
+      $resort = $(el);
+      return $resort.append($('<div/>').append($hotels.eq(idx).closest('.widgetcontainer').children()));
+    });
   });
 });
