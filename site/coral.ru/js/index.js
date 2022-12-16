@@ -119,17 +119,25 @@ Number.prototype.zeroPad = function(len, c) {
 };
 
 ASAP(function() {
-  return $('[data-content-marker]').on('click', function(e) {
-    var $hotels, $this, marker;
+  var $hotels;
+  $('[data-content-marker]').on('click', function(e) {
+    var $block2show, $this, marker;
     $this = $(this);
     marker = $this.attr('data-content-marker');
-    $("[data-content='" + marker + "']").addClass('shown').siblings('.shown').removeClass('shown');
+    $block2show = $("[data-content='" + marker + "']");
+    $block2show.addClass('shown').siblings('.shown').removeClass('shown');
     $this.addClass('selected').siblings('.selected').removeClass('selected');
-    $hotels = $('[data-component-instance]');
-    return $('.resort').each(function(idx, el) {
-      var $resort;
-      $resort = $(el);
-      return $resort.append($('<div/>').append($hotels.eq(idx).closest('.widgetcontainer').children()));
-    });
+    return setTimeout(function() {
+      var ref;
+      return (ref = $block2show.find('.cards-grid').data('isotope')) != null ? ref.arrange() : void 0;
+    }, 100);
+  });
+  $hotels = $('[data-component-instance]');
+  return $('.resort').each(function(idx, el) {
+    var $hotels_set_widgetcontainer, $resort;
+    $resort = $(el);
+    $hotels_set_widgetcontainer = $hotels.eq(idx).closest('.widgetcontainer');
+    $resort.append($('<div/>').append($hotels_set_widgetcontainer.children()));
+    return $hotels_set_widgetcontainer.remove();
   });
 });

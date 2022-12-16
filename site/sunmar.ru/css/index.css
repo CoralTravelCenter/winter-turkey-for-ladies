@@ -345,12 +345,12 @@ body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2
 #site-wrap section.resorts > .contenu .resort-contents .resort[data-content='ski'] .info-comp.heading.rev .visual {
   background-image: url(../iii/visual-heading-ercyies-desktop.jpg);
 }
-#site-wrap section.resorts > .contenu .resort-contents .resort h3 {
+#site-wrap section.resorts > .contenu .resort-contents .resort > h3 {
   margin: 3em auto 2em;
   line-height: 1.2;
   max-width: 30em;
 }
-#site-wrap section.resorts > .contenu .resort-contents .resort h3 + h3 {
+#site-wrap section.resorts > .contenu .resort-contents .resort > h3 + h3 {
   margin-top: 0;
 }
 @media screen and (max-width: 768px) {
@@ -654,4 +654,10 @@ body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2
 }
 #site-wrap .flickity-enabled {
   outline: none;
+}
+#hotels-set {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 3%;
 }

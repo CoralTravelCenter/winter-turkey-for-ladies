@@ -207,6 +207,36 @@ body .contentLayout-BaseContainer .notcritical > .container > .row:not(:nth-chil
 body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2) > div.col-sm-12.order-1.col-md-9.rightcol > h1 {
   display: none;
 }
+@font-face {
+  font-family: 'museosans';
+  font-weight: 900;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-900-webfont.ttf');
+}
+@font-face {
+  font-family: 'museosans';
+  font-weight: bold;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-700-webfont.ttf');
+}
+@font-face {
+  font-family: 'museosans';
+  font-weight: normal;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-500-webfont.ttf');
+}
+@font-face {
+  font-family: 'museosans';
+  font-weight: 300;
+  src: url('https://font.static.useinsider.com/coraltravel/museosanscyrl-300-webfont.ttf');
+}
+#site-wrap {
+  font-family: museosans;
+  font-weight: normal;
+}
+#site-wrap h1,
+#site-wrap h2,
+#site-wrap h3,
+#site-wrap h4 {
+  font-weight: bold;
+}
 #site-wrap section.intro .kv {
   max-width: 1370px;
   margin: 2em auto 0;
@@ -355,12 +385,12 @@ body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2
     background-image: url(../iii/visual-heading-ercyies-mobile.jpg);
   }
 }
-#site-wrap section.resorts > .contenu .resort-contents .resort h3 {
+#site-wrap section.resorts > .contenu .resort-contents .resort > h3 {
   margin: 3em auto 2em;
   line-height: 1.2;
   max-width: 30em;
 }
-#site-wrap section.resorts > .contenu .resort-contents .resort h3 + h3 {
+#site-wrap section.resorts > .contenu .resort-contents .resort > h3 + h3 {
   margin-top: 0;
 }
 #site-wrap section.resorts > .contenu .resort-contents .resort .info-comp {
@@ -548,4 +578,10 @@ body > div.contentLayout-BaseContainer > div.notcritical > div > div:nth-child(2
   #site-wrap section.message-us > .contenu .phone-number {
     font-size: 8vw;
   }
+}
+#hotels-set {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  margin-top: 3%;
 }

@@ -53,10 +53,12 @@ String::zeroPad = (len, c) ->
 Number::zeroPad = (len, c) -> String(@).zeroPad len, c
 
 ASAP ->
+
     $('[data-content-marker]').on 'click', (e) ->
         $this = $(this)
         marker = $this.attr 'data-content-marker'
-        $("[data-content='#{ marker }']").addClass('shown').siblings('.shown').removeClass('shown')
+        $block2show = $("[data-content='#{ marker }']")
+        $block2show.addClass('shown').siblings('.shown').removeClass('shown')
         $this.addClass('selected').siblings('.selected').removeClass('selected')
         setTimeout ->
             $('.flickity-enabled').flickity 'resize'
@@ -64,7 +66,16 @@ ASAP ->
         setTimeout ->
             $('.flickity-enabled').flickity 'resize'
         , 1000
+        setTimeout ->
+            $block2show.find('.cards-grid').data('isotope')?.arrange()
+        , 100
 
+    $hotels = $('[data-component-instance]')
+    $('.resort').each (idx, el) ->
+        $resort = $(el)
+        $hotels_set_widgetcontainer = $hotels.eq(idx).closest('.widgetcontainer')
+        $resort.append($('<div/>').append($hotels_set_widgetcontainer.children()))
+        $hotels_set_widgetcontainer.remove()
 
     preload 'https://cdnjs.cloudflare.com/ajax/libs/flickity/2.3.0/flickity.pkgd.min.js', ->
         $('.mobi-slider').flickity
